@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Funds</title>
+        <link rel="stylesheet" type="text/css" href="funds.css"/>
+        <link rel="icon" type="image/x-icon" href="images/FundsIcon.png"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="funds.js"></script>
+    </head>
+    <body onload="statementTabs(event, 'generalLedger')">
+        <div class="fundsApp">
+            <header>
+                <img src="images/FundsIcon.png" class="logo"/>
+                <nav class="mainMenu">
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'fileDropdown', 'fileMenu')" class="menuButton drops">File</button>
+                        <section class="menu" id="fileMenu">
+                            <ul>
+                                <li><button class="submenu drops">New</button></li>
+                                <li><button class="submenu drops">Open</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Close</button></li>
+                                <li><button class="submenu drops">Save</button></li>
+                                <li><button class="submenu drops">Save As...</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Export</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Quit</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'accountDropdown', 'accountMenu')" class="menuButton drops">Accounts</button>
+                        <section class="menu" id="accountMenu">
+                            <ul>
+                                <li><button class="submenu drops">New Account Category</button></li>
+                                <li><button class="submenu drops">New Account</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Edit Account Details</button></li>
+                                <li><button class="submenu drops">Modify Categories/Accounts Order</button></li>
+                                <li><button class="submenu drops">Remove Categories/Accounts</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'toolsDropdown', 'toolsMenu')" class="menuButton drops">Tools</button>
+                        <section class="menu" id="toolMenu">
+                            <ul>
+                                <li><a href="." class="submenu drops">Main Application</a></li>
+                                <li><a href="general-ledger.html" class="submenu drops">General Ledger</a></li>
+                                <li><a href="revenue-splitter.html" class="submenu drops">Revenue Splitter</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'helpDropdown', 'helpMenu')" class="menuButton drops">Help</button>
+                        <section class="menu" id="toolMenu">
+                            <ul>
+                                <li><a href="funds-help.html" class="submenu drops">User Manual</a></li>
+                                <li><a href="funds-about.html" class="submenu drops">About</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section id="hamburgerSection">
+               <button class="hamburger" onclick="hamburger()"><img src="images/HamburgerIcon.png"/></button>
+               <br>
+                <nav id="sidebar" class="sidebarEntry">
+                    <ul>
+                        <li><button class="sidebarButton">Book Details</button></li>
+                        <li><button class="sidebarButton"><img src="images/FileIcon.png"/></button></li>
+                        <li><button class="sidebarButton"><img src="images/FolderIcon.png"/></button></li>
+                        <li><button class="sidebarButton"><img src="images/SaveIcon.png"/></button></li>
+                    </ul>
+                </nav>
+                </section>
+                <article id="mainContent" class="maincontentEntry">
+                    <nav class="tabs">
+                        <button class="tabButton" onclick="statementTabs(event, 'generalLedger')">General Ledger</button>
+                    </nav>
+                    <section class="statements" id="generalLedger">
+                        <section class="filters">
+                            <div id="dateRadio">
+                            <ul>Date
+                                <li><input type="radio" name="onDate" id="onDate"/> On</li>
+                                <li><input type="radio" name="onDate" id="beforeDate" checked/> Before</li>
+                                <li><input type="radio" name="onDate" id="afterDate"/> After</li>
+                                <li><input type="radio" name="onDate" id="betweenDates"/> Between</li>
+                            </ul>
+                            </div>
+                            <div id="dateSelect">
+                                <ul>
+                                    <li><input type="date" name="dateStart" id="dateStart"/></li>
+                                    <li><input type="date" name="dateEnd" id="dateEnd" disabled/></li>
+                                </ul>
+                            </div>
+                            <div id="numberFilter">
+                                <ul>Num
+                                    <li><input type="text" name="numInput" id="numInput"/></li>
+                                </ul>
+                            </div>
+                            <div id="descriptionFilter">
+                                <ul>Description
+                                    <li><input type="text" name="descriptionInput" id="descriptionInput"/></li>
+                                </ul>
+                            </div>
+                            <div id="transferFilter">
+                                <ul>Transfer
+                                    <li><input type="text" name="transferInput" id="transferInput"/></li>
+                                </ul>
+                            </div>
+                            <div id="reconcileFilter">
+                                <ul>R
+                                    <li><input type="radio" name="reconcile" id="reconcileChecked"/> Checked</li>
+                                    <li><input type="radio" name="reconcile" id="reconcileUnchecked"/> Unchecked</li>
+                                </ul>
+                            </div>
+                            <div id="amountRadio">
+                                <ul>Amount
+                                    <li><input type="radio" name="lessAmount" id="lessAmount"/> < </li>
+                                    <li><input type="radio" name="equalAmount" id="equalAmount" checked/> = </li>
+                                    <li><input type="radio" name="greaterAmount" id="greaterAmount"/> > </li>
+                                </ul>
+                            </div>
+                            <div id="amountSelect">
+                                <ul>
+                                    <li><input type="number" name="amountInput" id="amountInput"/></li>
+                                </ul>
+                            </div>
+                            <div id="filterControls">
+                                <ul>
+                                    <li><button>Apply Filters</button></li>
+                                    <li><button>Clear Filters</button></li>
+                                </ul>
+                            </div>
+                            <div>
+                        </section>
+                        <section  class="ledger">
+                            <table border="1">
+                                <colgroup>
+                                    <col span="1" style="width: 10%"/>
+                                    <col span="1" style="width: 6%"/>
+                                    <col span="1" style="width: 25%"/>
+                                    <col span="1" style="width: 25%"/>
+                                    <col span="1" style="width: 4%"/>
+                                    <col span="1" style="width: 15%"/>
+                                    <col span="1" style="width: 15%"/>
+                                </colgroup>
+                                <thead>
+                                    <tr class="tableHeader">
+                                        <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+                </article>
+            </main>
+            <aside class="statusbar">
+                <section id="leftStatus">
+                    <p>Staus:</p>
+                </section>
+                <section id="middleStatus">
+                    <p>General Info</p>
+                </section>
+                <section id="rightStatus">
+                    <p>Pertinent Info</p>
+                </section>
+            </aside>
+        </div>
+    </body>
+</html>

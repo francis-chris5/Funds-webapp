@@ -99,8 +99,34 @@ function statementTabs(event, statement){
     for(let i=0; i<content.length; i++){
         content[i].style.display = "none";
     }
-    document.getElementById(statement).style.display = "grid";
+    if(statement == "balanceSheet"){
+        document.getElementById(statement).style.display = "grid";
+    }
+    else{
+        document.getElementById(statement).style.display = "block";
+    }
 }
 
+
+
+function accountLedger(account){
+    let left = screen.width/3;
+    let top = screen.width/4;
+    window.open("account-ledger.html", "AccountLedger", "width=700, height=400, left=" + left + ", top=" + top);
+    accountDetails();
+}
+
+function editTransaction(transaction){
+    let left = screen.width/3;
+    let top = screen.width/4;
+    window.open("edit-transaction.html", "EditTransaction", "width=700, height=200, left=" + left + ", top=" + top);
+    accountDetails();
+}
+
+
+
+function accountDetails(){
+    //load the stuff from the database into the innerhtml of the <tbody> element, there should only be one
+}
 
 

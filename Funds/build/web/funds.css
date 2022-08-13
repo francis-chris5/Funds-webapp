@@ -2,6 +2,7 @@
 :root{
     --app-size: 28em;
     --writing: 10pt;
+    --default-font-color: #000000;
     
 /*    --main-back-color: #f4f4f4;*/
     --main-back-color: rgba(243, 243, 243, 0.95);
@@ -11,6 +12,8 @@
     --button-hover-color: #e0e0e0;
     
     --general-border: solid 1px #e8e8e8;
+    
+    --table-head-color: #618257;
     font-size: var(--writing);
 }
 
@@ -61,6 +64,10 @@ button{
     font-size: var(--writing);
 }
 
+ul{
+    list-style-type: none;
+}
+
 .fundsApp{
     padding: 1.3em;
     background-color: var(--main-back-color);
@@ -105,6 +112,7 @@ button{
     list-style-type: none;
 }
 
+
 .submenu{
     position: relative;
     left: -4em;
@@ -117,6 +125,16 @@ button{
 .submenu:hover{
     background-color: var(--menu-hover-color);
 }
+
+.menu ul li a{
+    text-decoration: none;
+    color: var(--default-font-color);
+}
+
+.menu ul li a:hover{
+    cursor: default;
+}
+
 
 .menu hr{
     position: relative;
@@ -314,6 +332,90 @@ main{
 
 #equals{
     grid-area: equal;
+}
+
+
+.filters{
+    display: grid;
+    grid-template-columns: 15% 15% 20% 10% 20 auto;
+    grid-template-areas:
+        "dateRadio dateSelect description filterControls filterControls extra"
+        "num reconcile transfer amountRadio amountSelect extra";
+}
+
+.filters input[type=text]{
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+#dateRadio{
+    grid-area: dateRadio;
+}
+
+#dateSelect{
+    grid-area: dateSelect;
+}
+
+#numberFilter{
+    grid-area: num;
+}
+
+
+#descriptionFilter{
+    grid-area: description;
+}
+
+#transferFilter{
+    grid-area: transfer;
+}
+
+#reconcileFilter{
+    grid-area: reconcile;
+}
+
+#amountRadio{
+    text-align: right;
+    grid-area: amountRadio;
+}
+
+#amountSelect{
+    grid-area: amountSelect;
+}
+
+#amountSelect input[type=number]{
+    position: relative;
+    top: 2.7em;
+    left: -2.1em;
+    padding-left: 0;
+}
+
+
+#filterControls{
+    grid-area: filterControls;
+}
+
+
+
+
+.ledger{
+    overflow: scroll;
+}
+
+
+.ledger table{
+    width: 100%;
+    margin:0;
+    padding:0;
+    border: none;
+    border-collapse: collapse;
+}
+
+
+
+.tableHeader{
+    background-color: var(--table-head-color);
+    border: 1px solid #232323;
+    color: var(--main-back-color);
 }
 
 

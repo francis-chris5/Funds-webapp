@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="funds.js"></script>
     </head>
-    <body>
+    <body onload="statementTabs(event, 'balanceSheet')">
         <div class="fundsApp">
             <header>
                 <img src="images/FundsIcon.png" class="logo"/>
@@ -48,8 +48,9 @@
                         <button onclick="showSubmenu(event,'toolsDropdown', 'toolsMenu')" class="menuButton drops">Tools</button>
                         <section class="menu" id="toolMenu">
                             <ul>
-                                <li><button class="submenu drops">General Ledger</button></li>
-                                <li><button class="submenu drops">Revenue Splitter</button></li>
+                                <li><a href="." class="submenu drops">Main Application</a></li>
+                                <li><a href="general-ledger.html" class="submenu drops">General Ledger</a></li>
+                                <li><a href="revenue-splitter.html" class="submenu drops">Revenue Splitter</a></li>
                             </ul>
                         </section>
                     </div>
@@ -57,8 +58,8 @@
                         <button onclick="showSubmenu(event,'helpDropdown', 'helpMenu')" class="menuButton drops">Help</button>
                         <section class="menu" id="toolMenu">
                             <ul>
-                                <li><button class="submenu drops">User Manual</button></li>
-                                <li><button class="submenu drops">About</button></li>
+                                <li><a href="funds-help.html" class="submenu drops">User Manual</a></li>
+                                <li><a href="funds-about.html" class="submenu drops">About</a></li>
                             </ul>
                         </section>
                     </div>
@@ -83,19 +84,78 @@
                         <button class="tabButton" onclick="statementTabs(event, 'cashFlows')">Cash Flows</button>
                     </nav>
                     <section class="statements" id="balanceSheet">
-                        <aside id="assets">
-                            <p><img src="images/MoneyBagIcon.png"/>&nbsp; Assets</p>
+                        <aside id="assets"> 
+                            <details open>
+                                <summary> <img src="images/MoneyBagIcon.png"/>&nbsp; Assets</summary>
+                                <p>Asset accounts will go here</p>
+                                <p><button onclick="accountLedger('123')">Test account ledger</button></p>
+                            </details>
                         </aside>
                         <aside id="liabilities">
-                            <p><img src="images/ScaleIcon.png"/>&nbsp; Liabilities</p>
+                            <details open>
+                                <summary><img src="images/ScaleIcon.png"/>&nbsp; Liabilities</summary>
+                                <p>Liability accounts will go here</p>
+                            </details>
                         </aside>
                         <aside id="equity">
-                            <p><img src="images/BuildingIcon.png"/> &nbsp; Equity</p>
+                            <details open>
+                                <summary><img src="images/BuildingIcon.png"/> &nbsp; Equity</summary>
+                                <p>Equity accounts will go here</p>
                         </aside>
                     </section>
                     <section class="statements" id="cashFlows">
                         <aside>
-                            <p>Statement of Cash Flows</p>
+                            <details>
+                                <summary>+ Revenues</summary>
+                                <section  class="ledger">
+                                    <table border="1">
+                                        <colgroup>
+                                            <col span="1" style="width: 10%"/>
+                                            <col span="1" style="width: 6%"/>
+                                            <col span="1" style="width: 25%"/>
+                                            <col span="1" style="width: 25%"/>
+                                            <col span="1" style="width: 4%"/>
+                                            <col span="1" style="width: 15%"/>
+                                            <col span="1" style="width: 15%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="tableHeader">
+                                                <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </details>
+                            <details>
+                                <summary>- Expenses</summary>
+                                <section  class="ledger">
+                                    <table border="1">
+                                        <colgroup>
+                                            <col span="1" style="width: 10%"/>
+                                            <col span="1" style="width: 6%"/>
+                                            <col span="1" style="width: 25%"/>
+                                            <col span="1" style="width: 25%"/>
+                                            <col span="1" style="width: 4%"/>
+                                            <col span="1" style="width: 15%"/>
+                                            <col span="1" style="width: 15%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="tableHeader">
+                                                <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </details>
+                            <hr>
+                            <hr>
+                            <p id="net">= Net Profit/Loss</p>
                         </aside>
                     </section>
                 
