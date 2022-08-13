@@ -28,6 +28,19 @@ Here's a picture of the main GUI:
 ![main-gui-pic2](https://user-images.githubusercontent.com/50467171/184468029-87d2d600-c530-4485-bdbe-310a9b0e3a8a.png)
 
 <br>
+
+![cash-flows-pic1](https://user-images.githubusercontent.com/50467171/184511395-c1d1df6c-79d1-4f2c-8b8d-6b4ff2479e64.png)
+
+<br>
+
+![general-ledger-pic1](https://user-images.githubusercontent.com/50467171/184511397-c5cefa45-119f-4691-9c0e-406d04503fce.png)
+
+<br>
+
+![account-ledger-pic1](https://user-images.githubusercontent.com/50467171/184511399-de47886c-b13d-44b4-a48c-61bb8d4bc801.png)
+
+
+<br>
 <br>
 <br>
 more coming soon...
