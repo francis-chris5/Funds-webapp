@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Funds</title>
+        <link rel="stylesheet" type="text/css" href="funds.css"/>
+        <link rel="icon" type="image/x-icon" href="images/FundsIcon.png"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="funds.js"></script>
+    </head>
+    <body>
+        <div class="fundsApp">
+            <header>
+                <img src="images/FundsIcon.png" class="logo"/>
+                <nav class="mainMenu">
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'fileDropdown', 'fileMenu')" class="menuButton drops">File</button>
+                        <section class="menu" id="fileMenu">
+                            <ul>
+                                <li><button class="submenu drops">New</button></li>
+                                <li><button class="submenu drops">Open</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Close</button></li>
+                                <li><button class="submenu drops">Save</button></li>
+                                <li><button class="submenu drops">Save As...</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Export</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Quit</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'accountDropdown', 'accountMenu')" class="menuButton drops">Accounts</button>
+                        <section class="menu" id="accountMenu">
+                            <ul>
+                                <li><button class="submenu drops">New Account Category</button></li>
+                                <li><button class="submenu drops">New Account</button></li>
+                                <li><hr></li>
+                                <li><button class="submenu drops">Edit Account Details</button></li>
+                                <li><button class="submenu drops">Modify Categories/Accounts Order</button></li>
+                                <li><button class="submenu drops">Remove Categories/Accounts</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'toolsDropdown', 'toolsMenu')" class="menuButton drops">Tools</button>
+                        <section class="menu" id="toolMenu">
+                            <ul>
+                                <li><button class="submenu drops">General Ledger</button></li>
+                                <li><button class="submenu drops">Revenue Splitter</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="dropdownMenu" id="fileDropdown">
+                        <button onclick="showSubmenu(event,'helpDropdown', 'helpMenu')" class="menuButton drops">Help</button>
+                        <section class="menu" id="toolMenu">
+                            <ul>
+                                <li><button class="submenu drops">User Manual</button></li>
+                                <li><button class="submenu drops">About</button></li>
+                            </ul>
+                        </section>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section id="hamburgerSection">
+               <button class="hamburger" onclick="hamburger()"><img src="images/HamburgerIcon.png"/></button>
+               <br>
+                <nav id="sidebar" class="sidebarEntry">
+                    <ul>
+                        <li><button class="sidebarButton">Book Details</button></li>
+                        <li><button class="sidebarButton"><img src="images/FileIcon.png"/></button></li>
+                        <li><button class="sidebarButton"><img src="images/FolderIcon.png"/></button></li>
+                        <li><button class="sidebarButton"><img src="images/SaveIcon.png"/></button></li>
+                    </ul>
+                </nav>
+                </section>
+                <article id="mainContent" class="maincontentEntry">
+                    <nav class="tabs">
+                        <button class="tabButton" onclick="statementTabs(event, 'balanceSheet')">Balance Sheet</button>
+                        <button class="tabButton" onclick="statementTabs(event, 'cashFlows')">Cash Flows</button>
+                    </nav>
+                    <section class="statements" id="balanceSheet">
+                        <aside id="assets">
+                            <p><img src="images/MoneyBagIcon.png"/>&nbsp; Assets</p>
+                        </aside>
+                        <aside id="liabilities">
+                            <p><img src="images/ScaleIcon.png"/>&nbsp; Liabilities</p>
+                        </aside>
+                        <aside id="equity">
+                            <p><img src="images/BuildingIcon.png"/> &nbsp; Equity</p>
+                        </aside>
+                    </section>
+                    <section class="statements" id="cashFlows">
+                        <aside>
+                            <p>Statement of Cash Flows</p>
+                        </aside>
+                    </section>
+                
+                    <article class="accountingEquation">
+                        <p>
+                        <section id="totalAssets">
+                            <p>Total Assets</p>
+                            <p class="equationResult">0</p>
+                        </section>
+                        <section id="equals">
+                            =
+                        </section>
+                        <section id="totalLiabilities">
+                            <p>Total Liabilities</p>
+                            <p class="equationResult">0</p>
+                        </section>
+                        <section id="plus">
+                            +
+                        </section>
+                        <section id="totalEquity">
+                            <p>Total Equity</p>
+                            <p class="equationResult">0</p>
+                        </section>
+                        </p>
+                    </article>
+                </article>
+            </main>
+            <aside class="statusbar">
+                <section id="leftStatus">
+                    <p>Staus:</p>
+                </section>
+                <section id="middleStatus">
+                    <p>General Info</p>
+                </section>
+                <section id="rightStatus">
+                    <p>Pertinent Info</p>
+                </section>
+            </aside>
+        </div>
+    </body>
+</html>

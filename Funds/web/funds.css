@@ -1,0 +1,348 @@
+
+:root{
+    --app-size: 28em;
+    --writing: 10pt;
+    
+/*    --main-back-color: #f4f4f4;*/
+    --main-back-color: rgba(243, 243, 243, 0.95);
+    --button-back-color: rgba(243, 243, 243, 0.25);
+    --sheet-back-color: #ffffff;
+    --menu-hover-color: #7098f5;
+    --button-hover-color: #e0e0e0;
+    
+    --general-border: solid 1px #e8e8e8;
+    font-size: var(--writing);
+}
+
+
+@keyframes hamburgerIn{
+    from{
+        width: 5%;
+    }
+    to{
+        width: 20%;
+    }
+}
+
+
+@keyframes sidebarIn{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes contentIn{
+    from{
+        width: 90%;
+    }
+    to{
+        width: 78%;
+    }
+}
+
+html{
+    min-height: 100%;
+}
+
+
+body{
+    
+    
+    background-image: url(images/wood.jpg);
+    background-size: cover;
+    padding: 1em;
+    
+}
+
+button{
+    font-size: var(--writing);
+}
+
+.fundsApp{
+    padding: 1.3em;
+    background-color: var(--main-back-color);
+    border-radius: 2%;
+    min-height: var(--app-size);
+}
+
+.logo{
+    float: left;
+    width: 16px;
+    margin-right: 1.5em;
+}
+
+.menuButton{
+    float: left;
+    border: none;
+    background-color: var(--button-back-color);
+    padding: 0.3em;
+}
+
+.menuButton:hover{
+    background-color: var(--menu-hover-color);
+}
+
+
+.dropdownMenu{
+    display: inline-block;
+    position: relative;
+}
+
+.menu{
+    display: none;
+    position: absolute;
+    top: 1.2em;
+    background-color: #ffffff;
+    padding-left: 1.2em;
+    z-index: 5;
+    width: 10em;
+}
+
+.menu ul{
+    list-style-type: none;
+}
+
+.submenu{
+    position: relative;
+    left: -4em;
+    border: none;
+    width: 10em;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.submenu:hover{
+    background-color: var(--menu-hover-color);
+}
+
+.menu hr{
+    position: relative;
+    left: -4em;
+    background-color: #ffffff;
+    width: 10em;
+}
+
+
+.dropdownMenu:hover .menu{
+    display: block;
+}
+
+main{
+    clear: both;
+    width: 100%;
+    padding: 0;
+}
+
+
+#hamburgerSection{
+    width: 5%;
+    float: left;
+    animation: hamburgerIn normal 0.5s ease 0s 1 forwards;
+}
+
+.hamburger{
+    float: left;
+    background-color: var(--button-back-color);
+    border-radius: 7.5%;
+    border: var(--general-border);
+}
+
+.hamburger:hover{
+    background-color: var(--menu-hover-color);
+}
+
+.hamburger img{
+    width: 32px;
+    height: 32px;
+}
+
+
+
+#sidebar{
+    margin-top: 2em;
+    display: block;
+    animation: sidebarIn normal 0.5s ease 0s 1 forwards;
+}
+
+#sidebar ul{
+    list-style-type: none;
+}
+
+.sidebarButton{
+    width: 88%;
+    height: 80px;
+    margin-bottom: 0.75em;
+    background-color: var(--button-back-color);
+    border-radius: 7.5%;
+    border: var(--general-border);
+}
+
+.sidebarButton:hover{
+    background-color: var(--button-hover-color);
+}
+
+.sidebarButton img{
+    width: 34%;
+}
+
+/*
+.sidebarEntry{
+    animation: sidebarIn normal 0.5s ease 0s 1 forwards;
+}
+
+.sidebarExit{
+    animation: sidebarIn reverse 0.5s ease 0s 1 backwards;
+}*/
+
+#mainContent{
+    float: left;
+/*    border: double 1px #e8e8e8;*/
+    border-left: double 8px #e8e8e8;
+    border-top-left-radius: 1.5%;
+    border-top-right-radius: 1.5%;
+    animation: contentIn normal 0.5s ease 0s 1 forwards;
+}
+
+/*.mainContentEntry{
+    animation: contentIn normal 0.5s ease 0s 1 forwards;
+}
+
+.mainContentExit{
+    animation: contentIn reverse 0.5s ease 0s 1 backwards;
+}*/
+
+.tabs{
+    margin-left: 1.5em;
+}
+.tabButton{
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: 1% 0.75% 0 0.75%;
+    border: var(--button-border);
+    border-bottom: none;
+    border-top-left-radius: 7.5%;
+    border-top-right-radius: 7.5%;
+}
+
+.tabButton:hover{
+    background-color: var(--button-hover-color);
+}
+
+.statements{
+    display: none;
+    height: var(--app-size);
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    border-top: var(--general-border);
+}
+
+.statements aside{
+    background-color: var(--sheet-back-color);
+    margin: 1em;
+    overflow: scroll;
+    padding: 0.5em;
+}
+
+.statements aside img{
+    width: 24px;
+}
+
+#balanceSheet{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "assets liabilities"
+        "assets equity";
+}
+
+#assets{
+    grid-area: assets;
+}
+
+#liabilities{
+    grid-area: liabilities;
+}
+
+#equity{
+    grid-area: equity;
+}
+
+.statements p{
+    margin: 0;
+}
+
+
+.accountingEquation{
+    float: right;
+    min-width: 75%;
+    display: grid;
+    grid-template-columns: 20% 5% 20% 5% 20%;
+    grid-template-areas: "asset equal liability plus equity";
+}
+
+.accountingEquation section p{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.equationResult{
+    background-color: #ffffff;
+    margin-left: 2em;
+    text-align: center;
+    width: 80%;
+}
+
+#totalAssets{
+    grid-area: asset;
+}
+
+#totalLiabilities{
+    grid-area: liability;
+}
+
+#totalEquity{
+    grid-area: equity;
+}
+
+#plus{
+    grid-area: plus;
+}
+
+#equals{
+    grid-area: equal;
+}
+
+
+.statusbar{
+    clear: both;
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    grid-template-areas: "left middle right";
+    font-size: 0.67em;
+    padding-top: 0.5em;
+    border-top: double 3px #e8e8e8;
+}
+
+.statusbar p{
+    padding: 0;
+    margin: 0;
+}
+
+#leftStatus{
+    grid-area: left;
+}
+
+
+#middleStatus{
+    grid-area: middle;
+    text-align: center;
+}
+
+#rightStatus{
+    grid-area: right;
+    text-align: right;
+}
