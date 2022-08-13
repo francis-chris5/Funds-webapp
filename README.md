@@ -25,7 +25,7 @@ Here's a picture of the main GUI:
 
 <br>
 
-![main-gui-pic2](https://user-images.githubusercontent.com/50467171/184467979-173d8918-2e83-4bf2-af21-ca3bbe4065ea.png)
+![main-gui-pic2](https://user-images.githubusercontent.com/50467171/184468029-87d2d600-c530-4485-bdbe-310a9b0e3a8a.png)
 
 <br>
 <br>
