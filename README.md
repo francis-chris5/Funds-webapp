@@ -1,4 +1,8 @@
-# Funds-webapp
+![FundsIcon](https://user-images.githubusercontent.com/50467171/184467868-e4a4d724-af5e-4a63-b4bf-8a88acaa4ca4.png)
+
+<h1>Funds Web App</h1>
+
+
 It's been a couple years since I made the accounting software I wanted for my personal usage (www.github.com/francis-chris5/Funds) and for version 2 I'm switching from desktop with JavaFX to a web application with Java Servlets.
 
 
@@ -15,7 +19,9 @@ The graphical user interfaces (GUI) will probably take the most time, but versio
 
 Here's a picture of the main GUI:
 
----insert pic---
+
+
+![main-gui-pic1](https://user-images.githubusercontent.com/50467171/184467878-fd254886-7f80-4aaa-828a-e3d814cc1c82.png)
 
 
 <br>
