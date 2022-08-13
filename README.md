@@ -23,6 +23,9 @@ Here's a picture of the main GUI:
 
 ![main-gui-pic1](https://user-images.githubusercontent.com/50467171/184467878-fd254886-7f80-4aaa-828a-e3d814cc1c82.png)
 
+<br>
+
+![main-gui-pic2](https://user-images.githubusercontent.com/50467171/184467979-173d8918-2e83-4bf2-af21-ca3bbe4065ea.png)
 
 <br>
 <br>
