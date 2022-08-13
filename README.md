@@ -1,4 +1,4 @@
-![FundsIcon](https://user-images.githubusercontent.com/50467171/184467868-e4a4d724-af5e-4a63-b4bf-8a88acaa4ca4.png)
+![image](https://user-images.githubusercontent.com/50467171/184467930-2014ae7c-337e-48ee-bb68-f83ec3af4a2f.png)
 
 <h1>Funds Web App</h1>
 
