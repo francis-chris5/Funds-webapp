@@ -1,20 +1,46 @@
 
 :root{
     --app-size: 28em;
-    --writing: 10pt;
-    --default-font-color: #000000;
+    --writing-size: 10pt;
+    --default-writing-color: #000000;
+    --header-writing-color: rgba(243, 243, 243, 0.95);
     
-/*    --main-back-color: #f4f4f4;*/
+
     --main-back-color: rgba(243, 243, 243, 0.95);
     --button-back-color: rgba(243, 243, 243, 0.25);
     --sheet-back-color: #ffffff;
     --menu-hover-color: #7098f5;
     --button-hover-color: #e0e0e0;
+    --menu-back-color: #ffffff;
     
+
     --general-border: solid 1px #e8e8e8;
+    --section-border: double 8px #e8e8e8;
+
+
+    --hamburger-image-size: 32px;
+    --sidebar-button-width: 88%;
+    --sidebar-button-height: 80px;
+    --sidebar-button-image-width: 34%;
+
+
+    --submenu-width: 10em;
     
+
+    --statement-margin: 1.5em;
+    --account-type-image-width: 24px;
+
     --table-head-color: #618257;
-    font-size: var(--writing);
+    --ledger-back-color-1: #ddfad4;
+    --ledger-back-color-2: #9bc78d;
+    --ledger-back-color-3: #F1F171;
+    --ledger-writing-color-1: #232323;
+    --ledger-writing-color-2: #f54f25;
+    --ledger-writing-color-3: #b5a264;
+    --ledger-border-color: #737373;
+
+
+    font-size: var(--writing-size);
 }
 
 
@@ -102,10 +128,10 @@ ul{
     display: none;
     position: absolute;
     top: 1.2em;
-    background-color: #ffffff;
+    background-color: var(--menu-back-color);
     padding-left: 1.2em;
     z-index: 5;
-    width: 10em;
+    width: var(--submenu-width);
 }
 
 .menu ul{
@@ -117,9 +143,9 @@ ul{
     position: relative;
     left: -4em;
     border: none;
-    width: 10em;
+    width: var(--submenu-width);
     text-align: left;
-    background-color: #ffffff;
+    background-color: var(--menu-back-color);
 }
 
 .submenu:hover{
@@ -128,7 +154,7 @@ ul{
 
 .menu ul li a{
     text-decoration: none;
-    color: var(--default-font-color);
+    color: var(--default-writing-color);
 }
 
 .menu ul li a:hover{
@@ -139,8 +165,8 @@ ul{
 .menu hr{
     position: relative;
     left: -4em;
-    background-color: #ffffff;
-    width: 10em;
+    background-color: var(--menu-back-color);
+    width: var(--submenu-width);
 }
 
 
@@ -173,8 +199,8 @@ main{
 }
 
 .hamburger img{
-    width: 32px;
-    height: 32px;
+    width: var(--hamburger-image-size);
+    height: var(--hamburger-image-size);
 }
 
 
@@ -190,8 +216,8 @@ main{
 }
 
 .sidebarButton{
-    width: 88%;
-    height: 80px;
+    width: var(--sidebar-button-width);
+    height: var(--sidebar-button-height);
     margin-bottom: 0.75em;
     background-color: var(--button-back-color);
     border-radius: 7.5%;
@@ -203,7 +229,7 @@ main{
 }
 
 .sidebarButton img{
-    width: 34%;
+    width: var(--sidebar-button-image-width);
 }
 
 /*
@@ -218,7 +244,7 @@ main{
 #mainContent{
     float: left;
 /*    border: double 1px #e8e8e8;*/
-    border-left: double 8px #e8e8e8;
+    border-left: var(--section-border);
     border-top-left-radius: 1.5%;
     border-top-right-radius: 1.5%;
     animation: contentIn normal 0.5s ease 0s 1 forwards;
@@ -235,6 +261,8 @@ main{
 .tabs{
     margin-left: 1.5em;
 }
+
+
 .tabButton{
     margin-top: 1em;
     margin-bottom: 0;
@@ -245,15 +273,17 @@ main{
     border-top-right-radius: 7.5%;
 }
 
+
 .tabButton:hover{
     background-color: var(--button-hover-color);
 }
 
+
 .statements{
     display: none;
     height: var(--app-size);
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    margin-left: var(--statement-margin);
+    margin-right: var(--statement-margin);
     border-top: var(--general-border);
 }
 
@@ -265,7 +295,7 @@ main{
 }
 
 .statements aside img{
-    width: 24px;
+    width: var(--account-type-image-width);
 }
 
 #balanceSheet{
@@ -308,7 +338,7 @@ main{
 }
 
 .equationResult{
-    background-color: #ffffff;
+    background-color: var(--sheet-back-color);
     margin-left: 2em;
     text-align: center;
     width: 80%;
@@ -406,8 +436,41 @@ main{
     width: 100%;
     margin:0;
     padding:0;
-    border: none;
+    /*border: none;
+    border-spacing: 0;*/
+    border: 1px solid --ledger-border-color;
     border-collapse: collapse;
+}
+
+
+td{
+    padding: 0;
+}
+
+
+#editTransationTable{
+    overflow: hidden;
+    background-color: var(--ledger-back-color-3);
+}
+
+#editTransactionTable tbody td{
+    background-color: var(--ledger-back-color-3);
+}
+
+.ledger input{
+    color:  var(--ledger-writing-color-3);
+    accent-color: var(--ledger-back-color-3);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    background-color: var(--ledger-back-color-3);
+}
+
+
+
+#editTransfer{
+    color: var(--ledger-writing-color-2);
 }
 
 
@@ -415,7 +478,7 @@ main{
 .tableHeader{
     background-color: var(--table-head-color);
     border: 1px solid #232323;
-    color: var(--main-back-color);
+    color: var(--header-writing-color);
 }
 
 

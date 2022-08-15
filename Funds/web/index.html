@@ -9,10 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="funds.js"></script>
     </head>
+
+
     <body onload="statementTabs(event, 'balanceSheet')">
         <div class="fundsApp">
             <header>
                 <img src="images/FundsIcon.png" class="logo"/>
+
+
+
+
+
+    <!-- MAIN MENU -->
                 <nav class="mainMenu">
                     <div class="dropdownMenu" id="fileDropdown">
                         <button onclick="showSubmenu(event,'fileDropdown', 'fileMenu')" class="menuButton drops">File</button>
@@ -65,24 +73,49 @@
                     </div>
                 </nav>
             </header>
+
+
+
+
+
+
+
+    
             <main>
+    <!-- Hamburger Menu -->
                 <section id="hamburgerSection">
                <button class="hamburger" onclick="hamburger()"><img src="images/HamburgerIcon.png"/></button>
                <br>
                 <nav id="sidebar" class="sidebarEntry">
                     <ul>
-                        <li><button class="sidebarButton">Book Details</button></li>
+                        <li><button class="sidebarButton" onclick="showDetails()">Book Details</button></li>
                         <li><button class="sidebarButton"><img src="images/FileIcon.png"/></button></li>
                         <li><button class="sidebarButton"><img src="images/FolderIcon.png"/></button></li>
                         <li><button class="sidebarButton"><img src="images/SaveIcon.png"/></button></li>
                     </ul>
                 </nav>
                 </section>
+
+
+
+
+
+
+    <!-- Main Content --> 
                 <article id="mainContent" class="maincontentEntry">
                     <nav class="tabs">
                         <button class="tabButton" onclick="statementTabs(event, 'balanceSheet')">Balance Sheet</button>
                         <button class="tabButton" onclick="statementTabs(event, 'cashFlows')">Cash Flows</button>
                     </nav>
+
+
+
+
+
+
+
+
+    <!-- balance sheet -->
                     <section class="statements" id="balanceSheet">
                         <aside id="assets"> 
                             <details open>
@@ -103,6 +136,15 @@
                                 <p>Equity accounts will go here</p>
                         </aside>
                     </section>
+
+
+
+
+
+
+
+
+    <!-- cash flows --> 
                     <section class="statements" id="cashFlows">
                         <aside>
                             <details>
@@ -159,6 +201,13 @@
                         </aside>
                     </section>
                 
+
+
+
+
+
+
+    <!-- Accounting Equation --> 
                     <article class="accountingEquation">
                         <p>
                         <section id="totalAssets">
@@ -183,6 +232,13 @@
                     </article>
                 </article>
             </main>
+
+
+
+
+
+
+    <!-- Status Bar -->  
             <aside class="statusbar">
                 <section id="leftStatus">
                     <p>Staus:</p>
