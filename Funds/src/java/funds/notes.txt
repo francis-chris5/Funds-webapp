@@ -1,0 +1,13 @@
+
+
+I think everything could be transmitted in csv form
+    * all goes into tables except balance sheet, and that's a list of accounts in each category/subcategory
+    * this would minimize transmission quantity and can just be .split("\n") and .split(",") in the javascript to have an array
+    * I think encryption/decryption would be fairly easy this way too
+
+    Counterpoints:
+        - json could be better setup to add appropriate html based on object received
+        - xml could just be included in the stylesheet directly
+        - server sending html string then to .innerHtml would probably be the easiest client-side (server handles all processing maybe easier to save, no need to send back more than a boolean... ++autosave)
+
+

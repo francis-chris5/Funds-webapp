@@ -85,7 +85,7 @@ html{
 body{
     
     
-    background-image: url(images/wood.jpg);
+    background-image: url(../images/wood.jpg);
     background-size: cover;
     padding: 1em;
     
@@ -378,9 +378,9 @@ main{
         "num reconcile transfer amountRadio amountSelect extra";
 }
 
-.filters input[type=text]{
+.filters input[type=text], .revenueSplits input[type=text], .revenueSplits input[type=number]{
     max-width: 80%;
-    margin-left: 10%;
+    margin-left: 2em;
 }
 
 #dateRadio{
@@ -429,6 +429,62 @@ main{
     grid-area: filterControls;
 }
 
+
+.splitsWrapper{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: "selection splits";
+}
+
+#revenueSelection{
+    grid-area: selection;
+}
+
+#revenueSplits{
+    grid-area: splits;
+}
+
+.savedSplits{
+    clear: right;
+    padding-top: 2em;
+}
+#availableAccounts, #savedSplits, #splits{
+    overflow: scroll;
+}
+
+#availableAccounts{
+    max-height: 9em;
+}
+
+#savedSplits{
+    max-height: 5em;
+}
+.splitControls{
+    margin-top: 0;
+}
+
+#availableAccounts li, #savedSplits li, #split li{
+    background-color: #ffffff;
+    margin-left: 2em;
+}
+
+.listLabel{
+    margin-left: 0.8em;
+}
+
+#splitLabels ul{
+    float: left;
+}
+.split{
+    clear: left;
+}
+#split{
+    max-height: 18em;
+    overflow: scroll;
+}
+.splitControls{
+    float: right;
+}
 
 
 .bookDetails{
@@ -496,10 +552,24 @@ main{
     border-collapse: collapse;
 }
 
+.ledger tbody tr:nth-child(even){
+    background: var(--ledger-back-color-2);
+}
+
+.ledger tbody tr:nth-child(odd){
+    background: var(--ledger-back-color-1);
+}
+
 
 #accountLedger{
-    height: var(--account-ledger-height);
+/*    height: var(--account-ledger-height);*/
 }
+
+#accountLedger img{
+    width:12px;
+}
+
+
 
 
 .accountOptionLabel{
@@ -513,9 +583,14 @@ main{
 }
 
 
+
 #editTransationTable, #inputTransactionTable{
     overflow: hidden;
     background-color: var(--ledger-back-color-3);
+}
+
+#inputTransactionTable img{
+    width: 12px;
 }
 
 #editTransactionTable tbody td, #inputTransactionTable tbody td{

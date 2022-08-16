@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><a href="../">Back To Home Page</a></h1>
+
+
+        <h1>Funds: Accounting Software</h1>
+
+        <h3>Version 2.1.1 --Web Application</h3>
+
+                <h5>Developed By: Christopher S. Francis</h5>
+                <small>&copy; 2021 to 2022</small>
+
+
+
+
+
+
+
+                <h2>Summary</h2>
+
+                <p>After having a laptop stolen a few years back I switched tracking my personal finances from accounting software to a customized spreadsheet. When time came for a new laptop again I decided to go back to accounting software, however, the accounting software I've been using personally doesn't exactly fit my needs: it's designed for a large corporation which means there is way more there than I need, small input issues -I am constantly editing transactions by accident so trying to make that less likely to happen without making it difficult to edit transactions, I was also thinking that the standard accounting statements should be the primary appearance of the GUI not an afterthought to an overly fancy interface then tacked on and hidden a couple menus deep.</p>
+
+                <p>I don't want a general purpose spreadsheet modified to fit my needs, I want to use specific purpose software set up to automate double entry accounting, but I don't want one of those massive conglomerations of tools that I'll never use and find myself getting lost in the menus for. So that's what I tried to develop here: simplicity is the name of the game... Essentially it's just a balance sheet for an overview of the accounts and a ledger to enter and edit transactions. In the background the software handles the standard double-entry method balancing of accounts while the data is stored in nested collections of Linked Lists rather than a Relational Database, and just the small number of tools I find myself needing.</p>
+
+
+
+
+
+
+
+
+                <h2>Design Details:</h2>
+
+                <p>It's open source software so if you are interested in customizing some accounting software to fit your exact needs the simplistic idea I was going for here may make an ideal starting point.</p>
+                <ul>
+                    <li>PLATFORM: Coded in Java with Graphical User interface in JavaFX so that the same code can readily be used in desktop, mobile, and web scenarios. </li>
+                    
+
+                    <li>STRUCTURE: 
+                        <ul>
+                            <li>Books are the working files (new, save, open, etc.)</li>
+                            <li>Books are collections of Accounts</li>
+                            <li>Accounts are collections of Transactions</li>
+                            <li>Transactions are collections of datafields describing a real world monetary exchange</li>
+                            <li>Everything is tied together via a nested assortment of Linked Lists</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <br>
+                <br>
+    </body>
+</html>

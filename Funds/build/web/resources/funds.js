@@ -112,7 +112,7 @@ function statementTabs(event, statement){
 function accountLedger(account){
     let left = screen.width/3;
     let top = screen.height/4;
-    window.open("account-ledger.html", "AccountLedger", "width=750, height=400, left=" + left + ", top=" + top);
+    window.open("pages/account-ledger.html", "AccountLedger", "width=750, height=400, left=" + left + ", top=" + top);
     accountDetails();
 }
 
@@ -128,7 +128,7 @@ function editTransaction(transaction){
 function showDetails(){
     let left = screen.width/10;
     let top = screen.height/8;
-    window.open("book-details.html", "EditTransaction", "width=850, height=480, left=" + left + ", top=" + top);
+    window.open("pages/book-details.html", "EditTransaction", "width=850, height=480, left=" + left + ", top=" + top);
     accountDetails();
 }
 
