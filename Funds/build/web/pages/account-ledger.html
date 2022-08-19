@@ -4,7 +4,7 @@
     <head>
         <title>Funds</title>
         <link rel="stylesheet" type="text/css" href="../resources/funds.css"/>
-        <link rel="icon" type="image/x-icon" href="../images/FundsIcon.png"/>
+        <link rel="icon" type="image/x-icon" href="../images/FundsIcon.svg"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../resources/funds.js"></script>
@@ -16,12 +16,12 @@
 
 
     <!-- Account Ledger --> 
-        <section  class="ledger">
+        <section  class="ledger" id="accountLedgerSection">
             <table border="1" id="accountLedger">
                 <colgroup>
-                    <col span="1" style="width: 5%"/>
-                    <col span="1" style="width: 10%"/>
                     <col span="1" style="width: 6%"/>
+                    <col span="1" style="width: 10%"/>
+                    <col span="1" style="width: 5%"/>
                     <col span="1" style="width: 23%"/>
                     <col span="1" style="width: 22%"/>
                     <col span="1" style="width: 4%"/>
@@ -29,34 +29,115 @@
                     <col span="1" style="width: 15%"/>
                 </colgroup>
                 <thead>
-                    <tr class="tableHeader">
+                    <tr class="ledgerTableHeader">
                         <td style="background-color: rgba(243, 243, 243, 0.95)"></td><td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td>&#x1F5F8;</td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
                     </tr>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
                     </tr>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td>act1</td><td>test example</td><td>other</td><td>&#x1F5F8;</td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
                     </tr>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
                     </tr>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td>1234</td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn"></td><td class="ledgerAmountColumn">12.34</td>
                     </tr>
                     <tr>
-                        <td><button><img src="../images/EditIcon.png"/></button></td>
-                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td>12.34</td><td></td>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td>&#x1F5F8;</td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td>p34d</td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn"></td><td class="ledgerAmountColumn">12.34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn"></td><td class="ledgerAmountColumn">12.34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="ledgerInputButton" onclick="editTransaction('123')"><img src="../images/EditIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.svg"/></button>
+                        </td>
+                        <td>8/15/2022</td><td></td><td>test example</td><td>other</td><td></td><td class="ledgerAmountColumn">12.34</td><td class="ledgerAmountColumn"></td>
                     </tr>
                     <!-- data goes here, getElementsByTagName('tbody') -->
 
@@ -82,7 +163,7 @@
                     <col span="1" style="width: 15%"/>
                 </colgroup>
                 <thead>
-                    <tr class="tableHeader">
+                    <tr class="ledgerTableHeader">
                         <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Amount</td><td></td>
                     </tr>
                 </thead>
@@ -94,26 +175,34 @@
                         <td><input type="text" name="inNum" id="inNum"/></td>
                         <td><input type="text" name="inDescription" id="inDescription"/></td>
                         <td>
-                            <select id="inTransfer" name="inTransfer">
-                                <option value="0">Stuff</option>
-                                <option value="0">Stuff</option>
-                                <option value="0" class="accountOptionLabel">Label</option>
-                                <option value="0">Stuff</option>
-                                <option value="0">Stuff</option>
-                                <option value="0">Stuff</option>
-                            </select>
+                            <button class="ledgerComboBoxLabel" onclick="comboBoxSelect(event, 'ledgerComboBoxOption')" onload="comboBoxSelect(event, 'ledgerComboBoxOption')">--Choose an Account-- &#9044;</button>
+                            <section class="ledgerComboBoxOptions">
+                                <ul>
+                                    <li><input type="radio" name="ledgerComboBoxOption" id="ledgerComboDefault" value="--Choose an option--" checked onclick="comboBoxSelect(event, 'ledgerComboBoxOption')"/><label for="ledgerComboDefault"> ((Clear Choice))</label></li>
+                                    <li><input type="radio" name="ledgerComboBoxOption" id="ledgerCombo1" value="Account 1" onclick="comboBoxSelect(event, 'ledgerComboBoxOption')"/><label for="ledgerCombo1">Account 1</label></li>
+                                    <li><input type="radio" name="ledgerComboBoxOption" id="ledgerCombo2" value="Account 2" onclick="comboBoxSelect(event, 'ledgerComboBoxOption')"/><label for="ledgerCombo2">This will be account number 2</label></li>
+                                    <li><input type="radio" name="ledgerComboBoxOption" id="ledgerCombo3" value="Account 3" onclick="comboBoxSelect(event, 'ledgerComboBoxOption')"/><label for="ledgerCombo3">Account 3</label></li>
+                                    <li><input type="radio" name="ledgerComboBoxOption" /><label for="combo3" class="accountOptionLabel">-- section label --</label></li>
+                                    <li><input type="radio" name="ledgerComboBoxOption" id="ledgerCombo4" value="Account 4" onclick="comboBoxSelect(event, 'ledgerComboBoxOption')"/><label for="ledgerCombo4">Account 4</label></li>
+                                </ul>
+                            </section>
                         </td>
-                        <td><input type="checkbox" name="inReconcile" id="inReconcile"/></td>
+<!--                        <td><input type="checkbox" name="inReconcile" id="inReconcile"/></td>-->
+                        
+
+                        <td>
+                            <button class="checkbutton" id="inputCheckButton" onclick="toggleCheckbutton(event, 'inputCheckButton' )"></button>
+                        </td>
+                        
+                        
                         <td><input type="number" name="inAmount" id="inAmount" step="0.01"/></td>
                         <td>
-                            <button class="ledgerInputButton"><img src="../images/AddIcon.png"/></button>
-                            <button class="ledgerInputButton"><img src="../images/ClearIcon.png"/></button>
-                            <button class="ledgerInputButton"><img src="../images/RemoveIcon.png"/></button>
+                            <button class="ledgerInputButton"><img src="../images/AddIcon.svg"/></button>
+                            <button class="ledgerInputButton"><img src="../images/ClearIcon.svg"/></button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <p><button onclick="editTransaction('123')">Test edit transaction</button></p>
     </body>
 </html>

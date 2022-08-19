@@ -139,3 +139,54 @@ function accountDetails(){
 }
 
 
+
+function toggleCheckbutton(event, id){
+    let checked = false;
+    if(document.getElementById(id).innerHTML === ""){
+        checked = true;
+    }
+    else{
+        checked = false;
+    }
+    
+    if(checked){
+        document.getElementById(id).innerHTML = "&#x1F5F8;";
+    }
+    else{
+        document.getElementById(id).innerHTML = "";
+    }
+}//end toggleCheckButton()
+
+
+function getToggle(element){
+    if(document.getElementById(element).innerHTML === ""){
+        return false;
+    }
+    else{
+        return true;
+    }
+}//end getToggle()
+
+
+
+
+var optionsShowing = false;
+function comboBoxSelect(event, options){
+    if(optionsShowing){
+        document.getElementsByClassName('ledgerComboBoxOptions')[0].style.display = "none";
+        optionsShowing = false;
+    }
+    else{
+        document.getElementsByClassName('ledgerComboBoxOptions')[0].style.display = "block";
+        optionsShowing = true;
+    }
+    let choices = document.getElementsByName(options);
+    for(let i=0; i < choices.length; i++){
+        if(choices[i].checked){
+            console.log(choices[i].checked);
+            console.log(choices[i].value)
+            document.getElementsByClassName('ledgerComboBoxLabel')[0].innerHTML = choices[i].value + " &nbsp; &nbsp; &#9044;";
+        }
+    }
+}//end comboBoxSelect()
+

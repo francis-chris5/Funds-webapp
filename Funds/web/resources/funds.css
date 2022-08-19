@@ -10,21 +10,17 @@
     --default-button-padding: 0.5em;
     --sheet-back-color: #ffffff;
     --accent-color-1: rgba(112, 152, 245, 0.3);
-    --menu-back-color: #ffffff;
-    
+    --menu-back-color: #ffffff; 
 
     --general-border: solid 1px #e8e8e8;
     --section-border: double 8px #e8e8e8;
-
 
     --hamburger-image-size: 32px;
     --sidebar-button-width: 88%;
     --sidebar-button-height: 80px;
     --sidebar-button-image-width: 34%;
 
-
     --submenu-width: 10em;
-    
 
     --statement-margin: 1.5em;
     --account-type-image-width: 24px;
@@ -38,8 +34,9 @@
     --ledger-writing-color-2: #f54f25;
     --ledger-writing-color-3: #b5a264;
     --ledger-border-color: #737373;
+    --ledger-button-padding: 0;
+    --ledger-button-image-size: 16px;
     --account-ledger-height: 270px;
-
 
     --control-button-width: 7em;
     --control-button-height: 3em;
@@ -66,7 +63,6 @@ body{
 }
 
 
-
 button{
     font-size: var(--writing-size);
     border: var(--general-border);
@@ -74,9 +70,16 @@ button{
     padding: var(--default-button-padding);
 }
 
+
+button:hover{
+    background-color: var(--accent-color-1);
+}
+
+
 ul{
     list-style-type: none;
 }
+
 
 .fundsApp{
     padding: 1.3em;
@@ -85,11 +88,13 @@ ul{
     min-height: var(--app-size);
 }
 
+
 .logo{
     float: left;
     width: 16px;
     margin-right: 1.5em;
 }
+
 
 .menuButton{
     float: left;
@@ -98,15 +103,12 @@ ul{
     padding: 0.3em;
 }
 
-.menuButton:hover{
-    background-color: var(--accent-color-1);
-}
-
 
 .dropdownMenu{
     display: inline-block;
     position: relative;
 }
+
 
 .menu{
     display: none;
@@ -117,6 +119,7 @@ ul{
     z-index: 5;
     width: var(--submenu-width);
 }
+
 
 .menu ul{
     list-style-type: none;
@@ -132,17 +135,16 @@ ul{
     background-color: var(--menu-back-color);
 }
 
-.submenu:hover{
-    background-color: var(--accent-color-1);
-}
 
 .menu ul li a{
     text-decoration: none;
     color: var(--writing-color);
 }
 
+
 .menu ul li a:hover{
     cursor: default;
+    background-color: var(--accent-color-1);
 }
 
 
@@ -158,6 +160,7 @@ ul{
     display: block;
 }
 
+
 main{
     clear: both;
     width: 100%;
@@ -168,19 +171,15 @@ main{
 #hamburgerSection{
     width: 20%;
     float: left;
-    /*animation: hamburgerIn normal 0.5s ease 0s 1 forwards;*/
 }
+
 
 .hamburger{
     float: left;
-/*    background-color: var(--button-back-color);*/
     border-radius: 7.5%;
     border: var(--general-border);
 }
 
-.hamburger:hover{
-    background-color: var(--accent-color-1);
-}
 
 .hamburger img{
     width: var(--hamburger-image-size);
@@ -188,60 +187,39 @@ main{
 }
 
 
-
 #sidebar{
     margin-top: 2em;
     display: block;
-/*    animation: sidebarIn normal 0.5s ease 0s 1 forwards;*/
 }
+
 
 #sidebar ul{
     list-style-type: none;
 }
 
+
 .sidebarButton{
     width: var(--sidebar-button-width);
     height: var(--sidebar-button-height);
     margin-bottom: 0.75em;
-/*    background-color: var(--button-back-color);*/
     border-radius: 7.5%;
     border: var(--general-border);
 }
 
-.sidebarButton:hover{
-    background-color: var(--accent-color-1);
-}
 
 .sidebarButton img{
     width: var(--sidebar-button-image-width);
 }
 
-/*
-.sidebarEntry{
-    animation: sidebarIn normal 0.5s ease 0s 1 forwards;
-}
-
-.sidebarExit{
-    animation: sidebarIn reverse 0.5s ease 0s 1 backwards;
-}*/
 
 #mainContent{
     float: left;
     width: 75%;
-/*    border: double 1px #e8e8e8;*/
     border-left: var(--section-border);
     border-top-left-radius: 1.5%;
     border-top-right-radius: 1.5%;
-    /*animation: contentIn normal 0.5s ease 0s 1 forwards;*/
 }
 
-/*.mainContentEntry{
-    animation: contentIn normal 0.5s ease 0s 1 forwards;
-}
-
-.mainContentExit{
-    animation: contentIn reverse 0.5s ease 0s 1 backwards;
-}*/
 
 .tabs{
     margin-left: 1.5em;
@@ -259,11 +237,6 @@ main{
 }
 
 
-.tabButton:hover{
-    background-color: var(--accent-color-1);
-}
-
-
 .statements{
     display: none;
     height: var(--app-size);
@@ -272,16 +245,19 @@ main{
     border-top: var(--general-border);
 }
 
+
 .statements aside{
     background-color: var(--sheet-back-color);
     margin: 1em;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 0.5em;
 }
+
 
 .statements aside img{
     width: var(--account-type-image-width);
 }
+
 
 #balanceSheet{
     display: grid;
@@ -291,17 +267,21 @@ main{
         "assets equity";
 }
 
+
 #assets{
     grid-area: assets;
 }
+
 
 #liabilities{
     grid-area: liabilities;
 }
 
+
 #equity{
     grid-area: equity;
 }
+
 
 .statements p{
     margin: 0;
@@ -316,11 +296,13 @@ main{
     grid-template-areas: "asset equal liability plus equity";
 }
 
+
 .accountingEquation section p{
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
 }
+
 
 .equationResult{
     background-color: var(--sheet-back-color);
@@ -329,21 +311,26 @@ main{
     width: 80%;
 }
 
+
 #totalAssets{
     grid-area: asset;
 }
+
 
 #totalLiabilities{
     grid-area: liability;
 }
 
+
 #totalEquity{
     grid-area: equity;
 }
 
+
 #plus{
     grid-area: plus;
 }
+
 
 #equals{
     grid-area: equal;
@@ -352,24 +339,28 @@ main{
 
 .filters{
     display: grid;
-    grid-template-columns: 15% 15% 20% 10% 20 auto;
+    grid-template-columns: 15% 15% 20% 10% 20% auto;
     grid-template-areas:
         "dateRadio dateSelect description filterControls filterControls extra"
         "num reconcile transfer amountRadio amountSelect extra";
 }
+
 
 .filters input[type=text], .revenueSplits input[type=text], .revenueSplits input[type=number]{
     max-width: 80%;
     margin-left: 2em;
 }
 
+
 #dateRadio{
     grid-area: dateRadio;
 }
 
+
 #dateSelect{
     grid-area: dateSelect;
 }
+
 
 #numberFilter{
     grid-area: num;
@@ -380,22 +371,27 @@ main{
     grid-area: description;
 }
 
+
 #transferFilter{
     grid-area: transfer;
 }
 
+
 #reconcileFilter{
     grid-area: reconcile;
 }
+
 
 #amountRadio{
     text-align: right;
     grid-area: amountRadio;
 }
 
+
 #amountSelect{
     grid-area: amountSelect;
 }
+
 
 #amountSelect input[type=number]{
     position: relative;
@@ -416,52 +412,70 @@ main{
     grid-template-areas: "selection splits";
 }
 
+
 #revenueSelection{
     grid-area: selection;
 }
+
 
 #revenueSplits{
     grid-area: splits;
 }
 
+
 .savedSplits{
     clear: right;
     padding-top: 2em;
 }
+
+
 #availableAccounts, #savedSplits, #splits{
     overflow: scroll;
 }
+
 
 #availableAccounts{
     max-height: 9em;
 }
 
+
 #savedSplits{
     max-height: 5em;
 }
+
+
 .splitControls{
     margin-top: 0;
 }
+
 
 #availableAccounts li, #savedSplits li, #split li{
     background-color: #ffffff;
     margin-left: 2em;
 }
 
+
 .listLabel{
     margin-left: 0.8em;
 }
 
+
 #splitLabels ul{
     float: left;
 }
+
+
 .split{
     clear: left;
 }
+
+
 #split{
     max-height: 18em;
     overflow: scroll;
 }
+
+
 .splitControls{
     float: right;
 }
@@ -470,6 +484,8 @@ main{
 .bookDetails{
     background-color: var(--main-back-color);
 }
+
+
 #generalDetails{
     display: grid;
     grid-template-columns: 60% 40%;
@@ -477,6 +493,7 @@ main{
         "name date"
         "brief brief";
 }
+
 
 #generalDetails input{
     max-width: 80%;
@@ -488,17 +505,21 @@ main{
     grid-area: name;
 }
 
+
 #dateDetails{
     grid-area: date;
 }
+
 
 #briefDetails{
     grid-area: brief;
 }
 
+
 #nameInput{
     width: 100%;
 }
+
 
 #dateInput{
 
@@ -517,9 +538,8 @@ main{
 }
 
 
-
 .ledger{
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 
@@ -527,33 +547,32 @@ main{
     width: 100%;
     margin:0;
     padding:0;
-    /*border: none;
-    border-spacing: 0;*/
     border-collapse: collapse;
 }
+
 
 .ledger tbody tr:nth-child(even){
     background: var(--ledger-back-color-2);
 }
+
 
 .ledger tbody tr:nth-child(odd){
     background: var(--ledger-back-color-1);
 }
 
 
-#accountLedger{
-/*    height: var(--account-ledger-height);*/
+#accountLedgerSection{
+    max-height: var(--account-ledger-height);
 }
+
 
 #accountLedger img{
-    width:12px;
+    width: var(--ledger-button-image-size);
 }
 
 
-
-
-.accountOptionLabel{
-    color: var(--ledger-writing-color-2);
+.ledgerInputButton{
+    padding: var(--ledger-button-padding);
 }
 
 
@@ -563,30 +582,48 @@ main{
 }
 
 
-
 #editTransationTable, #inputTransactionTable{
     overflow: hidden;
     background-color: var(--ledger-back-color-3);
 }
 
+
 #inputTransactionTable img{
     width: 12px;
 }
+
 
 #editTransactionTable tbody td, #inputTransactionTable tbody td{
     background-color: var(--ledger-back-color-3);
 }
 
+
 .ledger input, .ledger select{
-    color:  var(--ledger-writing-color-3);
-    accent-color: var(--ledger-back-color-3);
+    color: var(--ledger-writing-color-3);
+/*    accent-color: var(--ledger-back-color-3);*/
     background-color: var(--ledger-back-color-3);
     width: 100%;
     margin: 0;
     padding: 0;
     border-width: 0;
-    background-color: var(--ledger-back-color-3);
 }
+
+
+.ledger input[type=checkbox]{
+    appearance: none;
+}
+
+
+.checkbutton{
+    background-color: var(--ledger-back-color-3);
+    width: calc(var(--writing-size) * 1.3);
+    height: calc(var(--writing-size) * 1.3);
+    margin: 0.1em;
+    padding: 0.1em;
+    color: var(--ledger-writing-color-3);
+    border-color: var(--ledger-writing-color-3);
+}
+
 
 
 
@@ -601,6 +638,7 @@ main{
     margin: 0;
 }
 
+
 .finish, .cancel{
     background-color: var(--main-back-color);
     border-radius: 7.5%;
@@ -611,11 +649,55 @@ main{
 }
 
 
-.tableHeader{
+.ledgerTableHeader{
     background-color: var(--table-head-color);
     border: 1px solid #232323;
     color: var(--header-writing-color);
+    text-align: center;
 }
+
+
+.ledgerAmountColumn{
+    text-align: right;
+}
+
+
+.accountOptionLabel{
+    color: var(--ledger-writing-color-2);
+}
+
+/******************************************************/
+.ledgerComboBox{
+    display: inline-block;
+    position: relative;
+}
+
+.ledgerComboBoxLabel{
+    background-color: var(--ledger-back-color-3);
+    color: var(--ledger-writing-color-3);
+}
+
+
+.ledgerComboBoxOptions{
+    display: none;
+    position: absolute;
+    color: var(--ledger-writing-color-3);
+    background-color: var(--ledger-back-color-3);
+    padding-left: 1.2em;
+    width: 12em;
+    z-index: 5;
+}
+
+
+.ledgerComboBoxOptions li:hover, .ledgerComboBoxOptions input[type=radio]:checked ~ label{
+    background-color: var(--accent-color-1);
+}
+
+.ledgerComboBoxOptions input[type=radio]{
+    opacity: 0;
+}
+
+/********************************************/
 
 
 .statusbar{
@@ -628,10 +710,12 @@ main{
     border-top: double 3px #e8e8e8;
 }
 
+
 .statusbar p{
     padding: 0;
     margin: 0;
 }
+
 
 #leftStatus{
     grid-area: left;
@@ -642,6 +726,7 @@ main{
     grid-area: middle;
     text-align: center;
 }
+
 
 #rightStatus{
     grid-area: right;
