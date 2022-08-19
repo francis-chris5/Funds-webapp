@@ -2,15 +2,14 @@
 :root{
     --app-size: 28em;
     --writing-size: 10pt;
-    --default-writing-color: #000000;
-    --header-writing-color: rgba(243, 243, 243, 0.95);
+    --writing-color: #000000;
+    --body-padding: 1em;
     
-
     --main-back-color: rgba(243, 243, 243, 0.95);
     --button-back-color: rgba(243, 243, 243, 0.25);
+    --default-button-padding: 0.5em;
     --sheet-back-color: #ffffff;
-    --menu-hover-color: #7098f5;
-    --button-hover-color: #e0e0e0;
+    --accent-color-1: rgba(112, 152, 245, 0.3);
     --menu-back-color: #ffffff;
     
 
@@ -31,6 +30,7 @@
     --account-type-image-width: 24px;
 
     --table-head-color: #618257;
+    --header-writing-color: rgba(243, 243, 243, 0.95);
     --ledger-back-color-1: #ddfad4;
     --ledger-back-color-2: #9bc78d;
     --ledger-back-color-3: #F1F171;
@@ -44,55 +44,34 @@
     --control-button-width: 7em;
     --control-button-height: 3em;
     --control-button-spacing: 1em;
+}
 
+
+
+@font-face{
+    src: url("times.ttf");
+}
+
+
+*{
+    font-family: "Times New Roman";
     font-size: var(--writing-size);
 }
 
 
-@keyframes hamburgerIn{
-    from{
-        width: 5%;
-    }
-    to{
-        width: 20%;
-    }
-}
-
-
-@keyframes sidebarIn{
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-}
-
-@keyframes contentIn{
-    from{
-        width: 90%;
-    }
-    to{
-        width: 78%;
-    }
-}
-
-html{
-    min-height: 100%;
-}
-
-
 body{
-    
-    
     background-image: url(../images/wood.jpg);
     background-size: cover;
-    padding: 1em;
-    
+    padding: var(--body-padding);
 }
 
+
+
 button{
-    font-size: var(--writing);
+    font-size: var(--writing-size);
+    border: var(--general-border);
+    background-color: var(--button-back-color);
+    padding: var(--default-button-padding);
 }
 
 ul{
@@ -115,12 +94,12 @@ ul{
 .menuButton{
     float: left;
     border: none;
-    background-color: var(--button-back-color);
+/*    background-color: var(--button-back-color);*/
     padding: 0.3em;
 }
 
 .menuButton:hover{
-    background-color: var(--menu-hover-color);
+    background-color: var(--accent-color-1);
 }
 
 
@@ -154,12 +133,12 @@ ul{
 }
 
 .submenu:hover{
-    background-color: var(--menu-hover-color);
+    background-color: var(--accent-color-1);
 }
 
 .menu ul li a{
     text-decoration: none;
-    color: var(--default-writing-color);
+    color: var(--writing-color);
 }
 
 .menu ul li a:hover{
@@ -187,20 +166,20 @@ main{
 
 
 #hamburgerSection{
-    width: 5%;
+    width: 20%;
     float: left;
-    animation: hamburgerIn normal 0.5s ease 0s 1 forwards;
+    /*animation: hamburgerIn normal 0.5s ease 0s 1 forwards;*/
 }
 
 .hamburger{
     float: left;
-    background-color: var(--button-back-color);
+/*    background-color: var(--button-back-color);*/
     border-radius: 7.5%;
     border: var(--general-border);
 }
 
 .hamburger:hover{
-    background-color: var(--menu-hover-color);
+    background-color: var(--accent-color-1);
 }
 
 .hamburger img{
@@ -213,7 +192,7 @@ main{
 #sidebar{
     margin-top: 2em;
     display: block;
-    animation: sidebarIn normal 0.5s ease 0s 1 forwards;
+/*    animation: sidebarIn normal 0.5s ease 0s 1 forwards;*/
 }
 
 #sidebar ul{
@@ -224,13 +203,13 @@ main{
     width: var(--sidebar-button-width);
     height: var(--sidebar-button-height);
     margin-bottom: 0.75em;
-    background-color: var(--button-back-color);
+/*    background-color: var(--button-back-color);*/
     border-radius: 7.5%;
     border: var(--general-border);
 }
 
 .sidebarButton:hover{
-    background-color: var(--button-hover-color);
+    background-color: var(--accent-color-1);
 }
 
 .sidebarButton img{
@@ -248,11 +227,12 @@ main{
 
 #mainContent{
     float: left;
+    width: 75%;
 /*    border: double 1px #e8e8e8;*/
     border-left: var(--section-border);
     border-top-left-radius: 1.5%;
     border-top-right-radius: 1.5%;
-    animation: contentIn normal 0.5s ease 0s 1 forwards;
+    /*animation: contentIn normal 0.5s ease 0s 1 forwards;*/
 }
 
 /*.mainContentEntry{
@@ -280,7 +260,7 @@ main{
 
 
 .tabButton:hover{
-    background-color: var(--button-hover-color);
+    background-color: var(--accent-color-1);
 }
 
 
@@ -600,6 +580,7 @@ main{
 .ledger input, .ledger select{
     color:  var(--ledger-writing-color-3);
     accent-color: var(--ledger-back-color-3);
+    background-color: var(--ledger-back-color-3);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -666,3 +647,8 @@ main{
     grid-area: right;
     text-align: right;
 }
+
+
+
+
+

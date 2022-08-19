@@ -1,5 +1,4 @@
 
-
 I think everything could be transmitted in csv form
     * all goes into tables except balance sheet, and that's a list of accounts in each category/subcategory
     * this would minimize transmission quantity and can just be .split("\n") and .split(",") in the javascript to have an array
@@ -9,5 +8,15 @@ I think everything could be transmitted in csv form
         - json could be better setup to add appropriate html based on object received
         - xml could just be included in the stylesheet directly
         - server sending html string then to .innerHtml would probably be the easiest client-side (server handles all processing maybe easier to save, no need to send back more than a boolean... ++autosave)
+
+
+
+
+
+
+All new accounts should start with cash, revenue, and expense accounts
+    * should probably block abilitity to delete revenue and expense account or give a warning message cash flows tool won't work
+        * if html is modularized instead of pages could only load that if there is an account called "revenue" and an account called "expense"
+
 
 
