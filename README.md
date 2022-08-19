@@ -37,7 +37,7 @@ Here's a picture of the main GUI:
 
 <br>
 
-![account-ledger-pic-1](https://user-images.githubusercontent.com/50467171/185686810-3eeb3175-9209-4674-b799-f7142af4e2be.png)
+![account-ledger-pic-1](https://user-images.githubusercontent.com/50467171/185687348-0ede905d-79da-4b15-b063-0ee6a3bf9485.png)
 
 
 <br>
