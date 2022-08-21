@@ -64,8 +64,8 @@
                         <button onclick="showSubmenu(event,'helpDropdown', 'helpMenu')" class="menuButton drops">Help</button>
                         <section class="menu" id="toolMenu">
                             <ul>
-                                <li><a href="funds-help.html" class="submenu drops">User Manual</a></li>
-                                <li><a href="funds-about.html" class="submenu drops">About</a></li>
+                                <li><a href="funds-help.html" target="_blank" class="submenu drops">User Manual</a></li>
+                                <li><a href="funds-about.html" target="_blank" class="submenu drops">About</a></li>
                             </ul>
                         </section>
                     </div>
@@ -110,15 +110,18 @@
 
 
     <!-- Filter Section --> 
-                    <section class="statements" id="generalLedger">
+                
+                <section class="statements" id="generalLedger">
+                    <details>
+                    <summary>Filters</summary>
                         <section class="filters">
                             <div id="dateRadio">
-                            <ul>Date
-                                <li><input type="radio" name="onDate" id="onDate"/> On</li>
-                                <li><input type="radio" name="onDate" id="beforeDate" checked/> Before</li>
-                                <li><input type="radio" name="onDate" id="afterDate"/> After</li>
-                                <li><input type="radio" name="onDate" id="betweenDates"/> Between</li>
-                            </ul>
+                                <ul>Date
+                                    <li><button class="radiobutton" id="onDate" name="dateFilterRadio" onclick="toggleRadiobutton(event, 'dateFilterRadio', 'onDate' )" value="onDate">&#9864;</button><label class="radiobuttonLabel" for="onDate">On</label></li>
+                                    <li><button class="radiobutton" id="beforeDate" name="dateFilterRadio" onclick="toggleRadiobutton(event, 'dateFilterRadio', 'beforeDate' )" value="beforeDate"></button><label class="radiobuttonLabel" for="beforeDate">Before</label></li>
+                                    <li><button class="radiobutton" id="afterDate" name="dateFilterRadio" onclick="toggleRadiobutton(event, 'dateFilterRadio', 'afterDate' )" value="afterDate"></button><label class="radiobuttonLabel" for="afterDate">After</label></li>
+                                    <li><button class="radiobutton" id="betweenDates" name="dateFilterRadio" onclick="toggleRadiobutton(event, 'dateFilterRadio', 'betweenDates' )" value="betweenDates"></button><label class="radiobuttonLabel" for="betweenDates">Between</label></li>
+                                </ul>
                             </div>
                             <div id="dateSelect">
                                 <ul>
@@ -143,8 +146,9 @@
                             </div>
                             <div id="reconcileFilter">
                                 <ul>R
-                                    <li><input type="radio" name="reconcile" id="reconcileChecked"/> Checked</li>
-                                    <li><input type="radio" name="reconcile" id="reconcileUnchecked"/> Unchecked</li>
+<!--                                    <li><input type="radio" name="reconcile" id="reconcileChecked"/> Checked</li>
+                                    <li><input type="radio" name="reconcile" id="reconcileUnchecked"/> Unchecked</li>-->
+                                    <li><button class="checkbutton" id="reconcileFilterButton" onclick="toggleCheckbutton(event, 'reconcileFilterButton' )"></button></li>
                                 </ul>
                             </div>
                             <div id="amountRadio">
@@ -167,6 +171,8 @@
                             </div>
                             <div>
                         </section>
+                    </details>
+    
 
 
 
@@ -188,7 +194,7 @@
                                     <col span="1" style="width: 15%"/>
                                 </colgroup>
                                 <thead>
-                                    <tr class="tableHeader">
+                                    <tr class="ledgerTableHeader">
                                         <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
                                     </tr>
                                 </thead>

@@ -13,49 +13,50 @@
 
 
 
-
-        <section  class="ledger">
-            <table border="1" id="editTransactionTable">
-                <colgroup>
-                    <col span="1" style="width: 13%"/>
-                    <col span="1" style="width: 6%"/>
-                    <col span="1" style="width: 30%"/>
-                    <col span="1" style="width: 25%"/>
-                    <col span="1" style="width: 4%"/>
-                    <col span="1" style="width: 22%"/>
-                </colgroup>
-                <thead>
-                    <tr class="tableHeader">
-                        <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Amount</td>
-                    </tr>
-                </thead>
-
+            <section  class="ledger">
+                <table border="1" id="editTransactionTable">
+                    <colgroup>
+                        <col span="1" style="width: 13%"/>
+                        <col span="1" style="width: 6%"/>
+                        <col span="1" style="width: 30%"/>
+                        <col span="1" style="width: 25%"/>
+                        <col span="1" style="width: 4%"/>
+                        <col span="1" style="width: 22%"/>
+                    </colgroup>
+                    <thead>
+                        <tr class="ledgerTableHeader">
+                            <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Amount</td>
+                        </tr>
+                    </thead>
 
 
-                <tbody>
-                    <tr>
-                        <td><input type="date" name="editDate" id="editDate" /></td>
-                        <td><input type="text" name="editNum" id="editNum"/></td>
-                        <td><input type="text" name="editDescription" id="editDescription"/></td>
-                        <td><input type="text" id="editTransfer" value="Must Remove to Edit" disabled/></td>
-                        <td><input type="checkbox" name="editReconcile" id="editReconcile"/></td>
-                        <td><input type="number" name="editDebit" id="editDebit" step="0.01"/></td>
-                        <td><input type="number" name="editCredit" id="editCredit" step="0.01"/></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
+                    <tbody>
+                        <tr>
+                            <td><input type="date" name="editDate" id="editDate" /></td>
+                            <td><input type="text" name="editNum" id="editNum"/></td>
+                            <td><input type="text" name="editDescription" id="editDescription"/></td>
+                            <td><input type="text" id="editTransfer" value="Must Remove to Edit" disabled/></td>
+                            <td><button class="checkbutton" id="reconcileEditButton" onclick="toggleCheckbutton(event, 'reconcileEditButton' )"></button></td>
+                            <td><input type="number" name="editDebit" id="editDebit" step="0.01"/></td>
+                            <td><input type="number" name="editCredit" id="editCredit" step="0.01"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
 
 
 
 
-        <aside id="editTransactionButtons">
-            <p>
-                <button class="finish">Finish</button>
-                <button class="cancel">Cancel</button>
-            </p>
-        </aside>
+
+            <section id="editTransactionButtons">
+                <p>
+                    <button class="finish">Update</button>
+                    <button class="cancel">Cancel</button>
+                </p>
+            </section>
+            
+
     </body>
 </html>

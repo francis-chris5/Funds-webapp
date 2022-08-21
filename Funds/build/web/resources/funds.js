@@ -170,6 +170,36 @@ function getToggle(element){
 
 
 
+function toggleRadiobutton(event, radioset, element){
+    let radios = document.getElementsByName(radioset);
+    for(let i=0; i<radios.length; i++){
+        radios[i].innerHTML = "";
+    }
+    for(let i=0; i<radios.length; i++){
+        if(radios[i].id === element){
+            radios[i].innerHTML = "&#9864;";
+        }
+        else{
+            radios[i].innerHTML = "";
+        }
+    }
+    console.log(getRadio(radioset));
+}//end toggleRadiobutton()
+
+
+
+function getRadio(radioset){
+    let radios = document.getElementsByName(radioset);
+    for(let i=0; i<radios.length; i++){
+        if(radios[i].innerHTML != ""){
+            return radios[i].value;
+        }
+    }
+}//end getRadio()
+
+
+
+
 var optionsShowing = false;
 function comboBoxSelect(event, options){
     if(optionsShowing){
