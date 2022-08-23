@@ -270,6 +270,7 @@ main{
     margin-left: var(--statement-margin);
     margin-right: var(--statement-margin);
     border-top: var(--general-border);
+    overflow-y: scroll;
 }
 
 
@@ -365,8 +366,10 @@ main{
 
 
 .filters{
+    position: relative;
+    z-index: 10;
     display: grid;
-    grid-template-columns: 15% 15% auto 10% 20% 15%;
+    grid-template-columns: 15% 10% 25% 15% 20% 5%;
     grid-template-areas:
         "dateRadio dateSelect description filterControls filterControls extra"
         "num reconcile transfer amountRadio amountSelect extra";
@@ -436,6 +439,24 @@ main{
 }
 
 
+.generalLedgerBody ul{
+    padding: 0;
+}
+
+
+.generalLedgerDate, .generalLedgerNumber, .generalLedgerReconcile{
+    text-align: center;
+}
+
+
+.generalLedgerDescription, .generalLedgerDebitAccount, .generalLedgerCreditAccount{
+    text-align: left;
+}
+
+
+.generalLedgerDebit, .generalLedgerCredit{
+    text-align: right;
+}
 
 .splitsWrapper{
     display: grid;
@@ -572,6 +593,7 @@ main{
 .ledger{
     overflow-y: scroll;
 }
+
 
 
 .ledger table{

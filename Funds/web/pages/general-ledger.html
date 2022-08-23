@@ -146,16 +146,14 @@
                             </div>
                             <div id="reconcileFilter">
                                 <ul>R
-<!--                                    <li><input type="radio" name="reconcile" id="reconcileChecked"/> Checked</li>
-                                    <li><input type="radio" name="reconcile" id="reconcileUnchecked"/> Unchecked</li>-->
-                                    <li><button class="checkbutton" id="reconcileFilterButton" onclick="toggleCheckbutton(event, 'reconcileFilterButton' )"></button></li>
+                                   <li><button class="checkbutton" id="reconcileFilterButton" onclick="toggleCheckbutton(event, 'reconcileFilterButton' )"></button></li>
                                 </ul>
                             </div>
                             <div id="amountRadio">
                                 <ul>Amount
-                                    <li><input type="radio" name="lessAmount" id="lessAmount"/> < </li>
-                                    <li><input type="radio" name="equalAmount" id="equalAmount" checked/> = </li>
-                                    <li><input type="radio" name="greaterAmount" id="greaterAmount"/> > </li>
+                                    <li><button class="radiobutton" id="lessAmount" name="compareAmount" onclick="toggleRadiobutton(event, 'compareAmount', 'lessAmount' )" value="lessAmount"></button><label class="radiobuttonLabel" for="lessAmount"><</label></li>
+                                    <li><button class="radiobutton" id="equalAmount" name="compareAmount" onclick="toggleRadiobutton(event, 'compareAmount', 'equalAmount' )" value="equalAmount">&#9864;</button><label class="radiobuttonLabel" for="equalAmount">=</label></li>
+                                    <li><button class="radiobutton" id="greaterAmount" name="compareAmount" onclick="toggleRadiobutton(event, 'compareAmount', 'greaterAmount' )" value="greaterAmount"></button><label class="radiobuttonLabel" for="greaterAmount">></label></li>
                                 </ul>
                             </div>
                             <div id="amountSelect">
@@ -175,7 +173,16 @@
     
 
 
-
+                    <details>
+                        <summary>Stats</summary>
+                        <ul>
+                            <li id="statTotal">Total: 200.00</li>
+                            <li id="statMin">Min: 0.02</li>
+                            <li id="statMax">Max: 20.00</li>
+                            <li id="statAverage">Average: 14.00</li>
+                            <li id="statStdDev">Std Dev: 1.23</li>
+                        </ul>
+                    </details>
 
 
 
@@ -198,7 +205,334 @@
                                         <td>Date</td><td>Num</td><td>Description</td><td>Transfer</td><td>R</td><td>Debit</td><td>Credit</td>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="generalLedgerBody">
+                     
+                                    
+                                    
+            <!-- ROW 1 -->
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerDate">2022-08-22</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerNumber">1234</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                
+                                                <li class="generalLedgerDescription">description of the transaction</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebitAccount">account 1</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCreditAccount">2nd Account</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerReconcile">&#x1F5F8;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebit">23.45</li>
+                                                <li><hr></li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCredit">23.45</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    
+                                    
+                                    
+                <!-- ROW 2 -->
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerDate">2022-08-22</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerNumber">1234</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                
+                                                <li class="generalLedgerDescription">description of the transaction</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebitAccount">account 1</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCreditAccount">2nd Account</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerReconcile">&#x1F5F8;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebit">23.45</li>
+                                                <li><hr></li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCredit">23.45</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                    <!-- ROW 3 -->
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerDate">2022-08-22</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerNumber">1234</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                
+                                                <li class="generalLedgerDescription">description of the transaction</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebitAccount">account 1</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCreditAccount">2nd Account</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerReconcile">&#x1F5F8;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebit">23.45</li>
+                                                <li><hr></li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCredit">23.45</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    
+                                    
+                                    
+                <!-- ROW 4 -->
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerDate">2022-08-22</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerNumber">1234</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                
+                                                <li class="generalLedgerDescription">description of the transaction</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebitAccount">account 1</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCreditAccount">2nd Account</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerReconcile">&#x1F5F8;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebit">23.45</li>
+                                                <li><hr></li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCredit">23.45</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    
+                                    
+                                    
+                    <!-- ROW 5 -->
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerDate">2022-08-22</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerNumber">1234</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                
+                                                <li class="generalLedgerDescription">description of the transaction</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebitAccount">account 1</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCreditAccount">2nd Account</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="generalLedgerReconcile">&#x1F5F8;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li class="generalLedgerDebit">23.45</li>
+                                                <li><hr></li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                                <li><hr></li>
+                                                <li class="generalLedgerCredit">23.45</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                          
+                                    
+                                    
                                     
                                 </tbody>
                             </table>
