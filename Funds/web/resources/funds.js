@@ -220,3 +220,47 @@ function comboBoxSelect(event, options){
     }
 }//end comboBoxSelect()
 
+
+
+
+function chooseSplitterAccount(event, element){
+    let selection = document.getElementById(element);
+    let odds = Array.from(document.querySelectorAll(".ledgerAccountListing li:nth-child(odd)"));
+    if(selection.style.backgroundColor !== "rgb(241, 241, 113)"){
+        selection.style.backgroundColor = "#F1F171";
+        selection.style.color = "#b5a264";
+    }
+    else{
+        if(odds.includes(selection)){
+            selection.style.backgroundColor = "#ddfad4";
+            selection.style.color = "#232323";
+        }
+        else{
+            selection.style.backgroundColor = "#9bc78d";
+            selection.style.color = "#232323";
+            
+        }
+    }
+//    document.getElementById('split').innerHTML += "<li>" + selection.innerHTML + "</li>";
+}//end chooseSplitterAccount()
+
+
+
+function addChosenAccounts(event){
+    let accounts = Array.from(document.querySelectorAll("#availableAccounts li"));
+    let odds = Array.from(document.querySelectorAll(".ledgerAccountListing li:nth-child(odd)"));
+    for(let i=0; i<accounts.length; i++){
+        if(accounts[i].style.backgroundColor === "rgb(241, 241, 113)"){
+            document.getElementById('split').innerHTML += "<li>" + accounts[i].innerHTML + "</li>";
+            if(odds.includes(accounts[i])){
+                accounts[i].style.backgroundColor = "#ddfad4";
+                accounts[i].style.color = "#232323";
+            }
+            else{
+                accounts[i].style.backgroundColor = "#9bc78d";
+                accounts[i].style.color = "#232323";
+
+            }
+        }
+    }
+}

@@ -481,11 +481,6 @@ main{
 }
 
 
-#availableAccounts, #savedSplits, #splits{
-    overflow: scroll;
-}
-
-
 #availableAccounts{
     max-height: 9em;
 }
@@ -501,9 +496,23 @@ main{
 }
 
 
-#availableAccounts li, #savedSplits li, #split li{
-    background-color: #ffffff;
-    margin-left: 2em;
+.ledgerAccountListing{
+    overflow: scroll;
+}
+
+.ledgerAccountListing li{
+    padding: 0.3em;
+    color: var(--ledger-writing-color-1);
+}
+
+
+.ledgerAccountListing li:nth-child(even){
+    background-color: var(--ledger-back-color-2);
+}
+
+
+.ledgerAccountListing li:nth-child(odd){
+    background-color: var(--ledger-back-color-1);
 }
 
 
@@ -679,7 +688,7 @@ main{
 }
 
 
-#editTransactionButtons, #editDetailsButtons{
+#editTransactionButtons, #editDetailsButtons, #inputTransactionButtons{
     float: right;
     padding: 0;
     margin: 0;
